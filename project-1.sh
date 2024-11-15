@@ -7,7 +7,9 @@ START=$(date +%s%3N)
 
 count=0
 
-for (( i = 2; i < input; i++ )); do
+sqrt=$(awk "BEGIN {print int(sqrt($input))}")
+
+for (( i = 2; i < sqrt; i++ )); do
     if (( input % i == 0 )); then
         echo "$input is not prime because it's divisible by $i"
         count=$((count + 1))
